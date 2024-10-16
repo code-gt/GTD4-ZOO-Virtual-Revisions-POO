@@ -47,11 +47,15 @@ public function crier() {
 }
 ```
 
-Dans cette méthode, on peut constater le `return $this` qui retourne l'objet qui a executé la méthode. A quoi ça sert ? Si l'on veut que notre lion se présente et crie directement après, on pourrait le faire en une seule ligne : 
+Dans cette méthode, on peut constater le `return $this` qui retourne l'objet qui a executé la méthode. 
+
+A quoi ça sert ? Si l'on veut que notre lion se présente et crie directement après, on pourrait le faire en une seule ligne : 
 
 ```php
 $lion->crier()->sePresenter();
-// crier retourne l'objet qui a executé cette méthode, donc ici le lion. Puisqu'à la fin de la méthode crier on a toujours un lion, on peut enchainer avec une autre méthode d'un lion, et ainsi de suite !
+// crier retourne l'objet qui a executé cette méthode, donc ici le lion. 
+//Puisqu'à la fin de la méthode crier on a toujours un lion,
+// on peut enchainer avec une autre méthode d'un lion, et ainsi de suite !
 ```
 
 ✅ **But** : Apprendre à utiliser `->` pour accéder aux fonctionnalités de nos objets.
