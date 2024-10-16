@@ -70,7 +70,7 @@ L'**héritage** permet de créer une nouvelle classe en se basant sur une classe
 2. Crée un objet `ours` qui utilise cette nouvelle classe.
 3. Dans `index.php`, testez que votre Ours est bien capable d'utiliser la méthode du mammifere.
 
-✅ But : Comprendre comment réutiliser du code avec l’héritage.
+✅ But : Comprendre comment réutiliser du code avec l’héritage.<br>
 👉 À toi de jouer : Ajoute un autre mammifère comme une girafe ou un koala. 🦒
 
 ### Partie 3 : L'encapsulation 🦊
