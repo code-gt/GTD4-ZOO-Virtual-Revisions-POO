@@ -38,6 +38,7 @@ $lion->sePresenter();
 ✅ **But** : Comprendre comment créer une classe et instancier des objets.
 
 ### 🛠 Partie 1.5 : Le chaînage (->) 🐍
+
 **📚 Rappel :**
 Le **chaînage** en PHP se fait avec l'opérateur `->`, qui permet d'accéder aux propriétés ou méthodes d'un objet. C'est comme une flèche qui pointe vers une action ou une caractéristique de cet objet.
 
@@ -46,14 +47,14 @@ Le **chaînage** en PHP se fait avec l'opérateur `->`, qui permet d'accéder au
 
 **🔎 Explication :**
 
-* `$lion` est un **objet**.
-* `->` nous permet d'**accéder** à ses **propriétés** ou **méthodes**.
-* `sePresenter()` est la **méthode** de l'objet `$lion`.
+- `$lion` est un **objet**.
+- `->` nous permet d'**accéder** à ses **propriétés** ou **méthodes**.
+- `sePresenter()` est la **méthode** de l'objet `$lion`.
 
 **👉 Exemple concret :**
 
-* Si tu veux que le **lion** se présente, il faut utiliser la méthode `sePresenter()` du lion et non pas celle de l'éléphant.
-* Il faudra d'abord accéder au lion, puis à sa méthode `sePresenter()` grâce au chaînage :
+- Si tu veux que le **lion** se présente, il faut utiliser la méthode `sePresenter()` du lion et non pas celle de l'éléphant.
+- Il faudra d'abord accéder au lion, puis à sa méthode `sePresenter()` grâce au chaînage :
 
 ```php
 $lion = new Animal("Simba", "Lion");
@@ -69,13 +70,13 @@ public function crier() {
 }
 ```
 
-Dans cette méthode, on peut constater le `return $this` qui retourne l'objet qui a executé la méthode. 
+Dans cette méthode, on peut constater le `return $this` qui retourne l'objet qui a executé la méthode.
 
-A quoi ça sert ? Si l'on veut que notre lion se présente et crie directement après, on pourrait le faire en une seule ligne : 
+A quoi ça sert ? Si l'on veut que notre lion se présente et crie directement après, on pourrait le faire en une seule ligne :
 
 ```php
 $lion->crier()->sePresenter();
-// crier retourne l'objet qui a executé cette méthode, donc ici le lion. 
+// crier retourne l'objet qui a executé cette méthode, donc ici le lion.
 //Puisqu'à la fin de la méthode crier on a toujours un lion,
 // on peut enchainer avec une autre méthode d'un lion, et ainsi de suite !
 ```
@@ -83,12 +84,13 @@ $lion->crier()->sePresenter();
 ✅ **But** : Apprendre à utiliser `->` pour accéder aux fonctionnalités de nos objets.
 
 ### Partie 2 : L’héritage 🐻‍❄️
+
 **📚 Rappel :**
 L'**héritage** permet de créer une nouvelle classe en se basant sur une classe existante. Cela évite de réécrire tout le code.
 
 **Exercice :**
 
-1. Crée une classe `Mammifere` qui hérite de `Animal` grâce au mot-clé `extends` et ajoute une nouvelle méthode `allaite()` qui dit : "*Je suis un mammifère et je peux allaiter.*"
+1. Crée une classe `Mammifere` qui hérite de `Animal` grâce au mot-clé `extends` et ajoute une nouvelle méthode `allaite()` qui dit : "_Je suis un mammifère et je peux allaiter._"
 2. Crée un objet `ours` qui utilise cette nouvelle classe.
 3. Dans `index.php`, testez que votre Ours est bien capable d'utiliser la méthode du mammifere.
 
@@ -106,6 +108,7 @@ L'**héritage** permet de créer une nouvelle classe en se basant sur une classe
 👉 **À toi de jouer** : Ajoute un autre mammifère comme une girafe ou un koala. 🦒
 
 ### Partie 3 : L'encapsulation 🦊
+
 **📚 Rappel :**
 L'**encapsulation** permet de protéger les données. On peut rendre des propriétés privées et utiliser des **getters** et **setters** pour y accéder.<br>
 **Attention**, on ne parle pas de sécurité dans le sens protection contre des hackers 👨🏻‍💻 mais plutôt dans le sens de s'assurer que les personnes qui utiliseront notre code l'utiliserons correctement (par exemple nos collègues de travail !).
@@ -115,8 +118,8 @@ L'**encapsulation** permet de protéger les données. On peut rendre des propri�
 1. Rends la propriété `$nom` privée dans la classe `Animal` si ce n'est pas déjà fait.
 2. Ajoute une méthode `getNom()` pour accéder à cette propriété et une méthode `setNom()` pour la modifier.
 3. Test dans `index.php` que :
-    - Le getter retourne bien le nom de l'objet.
-    - Le setter permet bien de changer le nom de l'objet après sa création.
+   - Le getter retourne bien le nom de l'objet.
+   - Le setter permet bien de changer le nom de l'objet après sa création.
 
 ```php
 class Animal {
@@ -128,12 +131,12 @@ class Animal {
         $this->nom = $nom;
         $this->espece = $espece;
     }
-    
+
     public function getNom(): string
     {
         return $this->nom;
     }
-    
+
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
@@ -144,13 +147,13 @@ class Animal {
     {
         return $this->nom;
     }
-    
+
     public function setEspece(string $espece): self
     {
         $this->espece = $espece;
         return $this;
     }
-    
+
     public function sePresenter(): self
     {
         echo "Je suis un {$this->nom}, un {$this->espece}" . PHP_EOL;
@@ -163,22 +166,46 @@ class Animal {
 ✅ But : Maîtriser la protection des données avec les méthodes privées et publiques.<br>
 👉 À toi de jouer : Passes les autres propriétés de tes animaux en privé et fais les ajouts et modifications adéquates. 🦁🦓
 
-
 ### Partie 4 : Le polymorphisme 🐼
+
 **📚 Rappel :**
 Le **polymorphisme** permet d’utiliser une même méthode pour des objets de classes différentes, avec un comportement spécifique selon la classe.
 
 **Exercice :**
 
 1. Crée une méthode `crier()` dans `Animal`, et redéfinis-la dans `Mammifere` et une nouvelle classe `Oiseau`.
-    * Animal dit : "*Je fais un bruit générique*"
-    * Mammifere dit : "*Je rugis ou grogne*"
-    * Oiseau dit : "*Je chante ou siffle*"
+   - Animal dit : "_Je fais un bruit générique_"
+   - Mammifere dit : "_Je rugis ou grogne_"
+   - Oiseau dit : "_Je chante ou siffle_"
 2. Tester votre code dans `index.php` tel que :
+
 ```php
 $canari->crier(); // "Je chante ou je siffle"
 $lion->crier(); // "Je rugis ou je grogne"
 $animal->crier(); // "je fais un bruit générique"
+```
+
+```php
+// Dans la classe Animal :
+    public function crier(): self
+    {
+        echo 'Je fais un bruit générique';
+        return $this;
+    }
+
+// Dans la classe Mammifere :
+public function crier(): self
+        {
+            echo 'Je rugis ou grogne';
+            return $this;
+        }
+
+// Dans la classe Oiseau :
+public function crier(): self
+    {
+        echo 'Je chante ou siffle';
+        return $this;
+    }
 ```
 
 ✅ But : Appliquer le polymorphisme pour avoir des comportements différents selon la classe.
@@ -187,8 +214,8 @@ $animal->crier(); // "je fais un bruit générique"
 
 📚 **Rappel** :
 
-* Une **classe abstraite** ne peut pas être instanciée directement. Elle sert de modèle pour d'autres classes qui vont la **hériter**.
-* Une **classe finale** ne peut plus être héritée par d'autres classes. C'est une classe que l'on verrouille, parce qu'on ne veut plus de modifications dans son comportement.
+- Une **classe abstraite** ne peut pas être instanciée directement. Elle sert de modèle pour d'autres classes qui vont la **hériter**.
+- Une **classe finale** ne peut plus être héritée par d'autres classes. C'est une classe que l'on verrouille, parce qu'on ne veut plus de modifications dans son comportement.
 
 **Pourquoi utiliser une classe abstraite ?**
 
@@ -244,14 +271,12 @@ De plus n'oubliez pas de **tester** les modifications que vous avez faites pour 
 
 #### Les classes finales 🚫
 
-
 **Exercice** :
 
 1. Les classes qui sont très spécifique comme `Lion` ou `Elephant`, n'auront pas d'enfant, il font donc empêcher le fait qu'elles puissent être héritées. Pour cela, tu utilises le mot-clé `final`.
 2. Ce type de classe pourrait être utilisé pour des cas particuliers dans ton zoo, où tu veux verrouiller le comportement d’un animal sans permettre d’autres extensions.
 
 ✅ **But** : Utiliser `final` devant `class` pour empêcher l’héritage dans certains cas spécifiques.
-
 
 ### Partie 6 : Interfaces et abstraction 🐨
 
