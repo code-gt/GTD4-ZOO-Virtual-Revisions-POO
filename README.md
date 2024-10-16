@@ -276,6 +276,12 @@ De plus n'oubliez pas de **tester** les modifications que vous avez faites pour 
 1. Les classes qui sont très spécifique comme `Lion` ou `Elephant`, n'auront pas d'enfant, il font donc empêcher le fait qu'elles puissent être héritées. Pour cela, tu utilises le mot-clé `final`.
 2. Ce type de classe pourrait être utilisé pour des cas particuliers dans ton zoo, où tu veux verrouiller le comportement d’un animal sans permettre d’autres extensions.
 
+```php
+final class Lion extends Mammifere {
+    
+}
+```
+
 ✅ **But** : Utiliser `final` devant `class` pour empêcher l’héritage dans certains cas spécifiques.
 
 ### Partie 6 : Interfaces et abstraction 🐨
