@@ -118,8 +118,51 @@ L'**encapsulation** permet de protéger les données. On peut rendre des propri�
     - Le getter retourne bien le nom de l'objet.
     - Le setter permet bien de changer le nom de l'objet après sa création.
 
+```php
+class Animal {
+    private string $nom;
+    private string $espece;
+
+    public function __construct(string $nom, string $espece)
+    {
+        $this->nom = $nom;
+        $this->espece = $espece;
+    }
+    
+    public function getNom(): string
+    {
+        return $this->nom;
+    }
+    
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+        return $this;
+    }
+
+    public function getEspece(): string
+    {
+        return $this->nom;
+    }
+    
+    public function setEspece(string $espece): self
+    {
+        $this->espece = $espece;
+        return $this;
+    }
+    
+    public function sePresenter(): self
+    {
+        echo "Je suis un {$this->nom}, un {$this->espece}" . PHP_EOL;
+        return $this;
+    }
+}
+
+```
+
 ✅ But : Maîtriser la protection des données avec les méthodes privées et publiques.<br>
 👉 À toi de jouer : Passes les autres propriétés de tes animaux en privé et fais les ajouts et modifications adéquates. 🦁🦓
+
 
 ### Partie 4 : Le polymorphisme 🐼
 **📚 Rappel :**
