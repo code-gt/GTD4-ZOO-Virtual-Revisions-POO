@@ -70,12 +70,12 @@ L'**héritage** permet de créer une nouvelle classe en se basant sur une classe
 2. Crée un objet `ours` qui utilise cette nouvelle classe.
 3. Dans `index.php`, testez que votre Ours est bien capable d'utiliser la méthode du mammifere.
 
-✅ But : Comprendre comment réutiliser du code avec l’héritage.<br>
-👉 À toi de jouer : Ajoute un autre mammifère comme une girafe ou un koala. 🦒
+✅ **But** : Comprendre comment réutiliser du code avec l’héritage.<br>
+👉 **À toi de jouer** : Ajoute un autre mammifère comme une girafe ou un koala. 🦒
 
 ### Partie 3 : L'encapsulation 🦊
 **📚 Rappel :**
-L'**encapsulation** permet de protéger les données. On peut rendre des propriétés privées et utiliser des **getters** et **setters** pour y accéder.
+L'**encapsulation** permet de protéger les données. On peut rendre des propriétés privées et utiliser des **getters** et **setters** pour y accéder.<br>
 **Attention**, on ne parle pas de sécurité dans le sens protection contre des hackers 👨🏻‍💻 mais plutôt dans le sens de s'assurer que les personnes qui utiliseront notre code l'utiliserons correctement (par exemple nos collègues de travail !).
 
 **Exercice** :
@@ -86,7 +86,7 @@ L'**encapsulation** permet de protéger les données. On peut rendre des propri�
     - Le getter retourne bien le nom de l'objet.
     - Le setter permet bien de changer le nom de l'objet après sa création.
 
-✅ But : Maîtriser la protection des données avec les méthodes privées et publiques.
+✅ But : Maîtriser la protection des données avec les méthodes privées et publiques.<br>
 👉 À toi de jouer : Passes les autres propriétés de tes animaux en privé et fais les ajouts et modifications adéquates. 🦁🦓
 
 ### Partie 4 : Le polymorphisme 🐼
@@ -119,7 +119,7 @@ $animal->crier(); // "je fais un bruit générique"
 
 Dans notre zoo, il est logique que tu ne puisses pas créer un "Animal" ou un "Mammifère" directement. Ce sont des catégories trop générales. Ce qui est concret, c’est le lion, le tigre, ou l’éléphant ! Les classes abstraites permettent d'imposer certaines règles sans être utilisées telles quelles.
 
-<br><hr><br>
+</hr>
 
 #### Les classes abstraites 👨‍🏫
 
@@ -160,11 +160,11 @@ class Oiseau extends Animal {
 }
 ```
 
-⚠️ il faudra faire des modifications dans `index.php` car par exemple : `$animal = new Animal()` ne marchera plus puisque c'est devenu une classe abstraite.
+⚠️ Il faudra faire des modifications dans `index.php` car par exemple : `$animal = new Animal()` ne marchera plus puisque c'est devenu une classe abstraite. ⚠️
 
 De plus n'oubliez pas de **tester** les modifications que vous avez faites pour **vérifier** que le code fonctionne toujours.
 
-✅ **But** : Apprendre à utiliser des classes abstraites pour éviter d’instancier des catégories trop générales.
+✅ **But** : Apprendre à utiliser des classes abstraites pour éviter d’instancier des catégories trop générales.<br>
 👉 **À toi de jouer** : Oiseau et Mammifere sont des catégories encore trop générale, rends les abstraites et créer des classes d'animaux très spécifique qui en héritent (exemple : Lion, Colibri, Elephant etc....).
 
 #### Les classes finales 🚫
@@ -181,6 +181,7 @@ De plus n'oubliez pas de **tester** les modifications que vous avez faites pour 
 ### Partie 6 : Interfaces et abstraction 🐨
 
 📚 **Rappel** :
+
 Les **interfaces** et les **classes abstraites** permettent de définir des méthodes que d'autres classes doivent implémenter. C'est un peu comme établir des règles que les classes doivent suivre.
 
 **Exercice** :
@@ -206,10 +207,11 @@ class Lion extends Mammifere implements Carnivore {
 $lion->mangerViande();
 ```
 
-✅ **But** : Comprendre comment imposer des comportements avec les interfaces.
+✅ **But** : Comprendre comment imposer des comportements avec les interfaces.<br>
 👉 **À toi de jouer** : Ajoute un autre carnivore dans ton zoo, comme un tigre ou un loup ! 🐅
 
-<br><hr><br>
+<hr>
 
 🎉 **Félicitations !** 🎉
+
 Tu as maintenant révisé les concepts clés de la POO en PHP à travers la création de ton propre zoo ! Continue d'améliorer ton zoo en ajoutant de nouvelles classes, méthodes et animaux. Pourquoi pas des enclots pour loger tes animaux ?
