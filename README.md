@@ -13,6 +13,28 @@ Une **classe** est comme un plan (blueprint) pour créer des objets. Un **objet*
 2. Ajoute une méthode sePresenter() qui affichera : "Je suis un {nom}, un {espece}".
 3. Dans un fichier `index.php` à la racine de ce projet, instancie deux objets de cette classe, par exemple un lion et un éléphant et tester votre méthode `sePrésenter()` pour chacun des objets.
 
+```php
+class Animal {
+    public $nom;
+    public $espece;
+
+    public function __construct($nom, $espece) {
+        $this->nom = $nom;
+        $this->espece = $espece;
+    }
+
+    public function sePresenter() {
+        echo "Je suis {$this->nom}, un {$this->espece}" . PHP_EOL;
+        return $this;
+    }
+}
+
+
+$lion = new Animal("simba", "lion");
+
+$lion->sePresenter();
+```
+
 ✅ **But** : Comprendre comment créer une classe et instancier des objets.
 
 ### 🛠 Partie 1.5 : Le chaînage (->) 🐍
